@@ -1,21 +1,30 @@
 function calculateTip() {
-    // Get the values from the input fields
-    var bill = document.getElementById('bill').value;
-    var tipPercentage = document.getElementById('tip').value;
+    // Get user input
+    var bill = document.getElementById("bill").value;
+    var tipPercent = document.getElementById("tip").value;
+    var currency = document.getElementById("currency").value;
+    
+    // Calculate tip
+    var tipAmount = bill * (tipPercent / 100);
+    var total = Number(bill) + tipAmount;
 
-    // Validate input
-    if (bill === '' || tipPercentage === '') {
-        alert("Please enter values");
-        return;
+    // Determine the currency symbol
+    var currencySymbol;
+    switch (currency) {
+        case "USD":
+            currencySymbol = "$";
+            break;
+        case "EUR":
+            currencySymbol = "€";
+            break;
+        case "GBP":
+            currencySymbol = "£";
+            break;
+        case "CHF":
+            currencySymbol = "CHF";
+            break;
     }
-    if (Number(tipPercentage) > 100 || Number(tipPercentage) < 0) {
-        alert("Please enter a valid tip percentage");
-        return;
-    }
-
-    // Calculate the tip
-    var tipAmount = (bill * tipPercentage) / 100;
 
     // Display the result
-    document.getElementById('result').innerHTML = "You should tip: $" + tipAmount.toFixed(2);
+    document.getElementById("result").innerHTML = "Tip amount: " + currencySymbol + tipAmount.toFixed(2) + ", Total bill: " + currencySymbol + total.toFixed(2);
 }
