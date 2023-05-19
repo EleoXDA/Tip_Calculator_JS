@@ -1,30 +1,32 @@
 function calculateTip() {
-    // Get user input
-    var bill = document.getElementById("bill").value;
-    var tipPercent = document.getElementById("tip").value;
-    var currency = document.getElementById("currency").value;
-    
-    // Calculate tip
-    var tipAmount = bill * (tipPercent / 100);
-    var total = Number(bill) + tipAmount;
+  let billAmount = Number(document.getElementById('bill').value);
+  let tipPercent = Number(document.getElementById('tip').value);
+  let currencySelector = document.getElementById('currency');
 
-    // Determine the currency symbol
-    var currencySymbol;
-    switch (currency) {
-        case "USD":
-            currencySymbol = "$";
-            break;
-        case "EUR":
-            currencySymbol = "€";
-            break;
-        case "GBP":
-            currencySymbol = "£";
-            break;
-        case "CHF":
-            currencySymbol = "CHF";
-            break;
-    }
+  if (isNaN(billAmount) || isNaN(tipPercent)) {
+    alert("Please enter valid numbers for both fields.");
+    return;
+  }
 
-    // Display the result
-    document.getElementById("result").innerHTML = "Tip amount: " + currencySymbol + tipAmount.toFixed(2) + ", Total bill: " + currencySymbol + total.toFixed(2);
+  let tipAmount = billAmount * (tipPercent / 100);
+  let totalAmount = billAmount + tipAmount;
+
+  let currencySymbol = getCurrencySymbol(currencySelector.value);
+  
+  document.getElementById('result').innerHTML = `Tip Amount (${currencySelector.options[currencySelector.selectedIndex].text}): ${currencySymbol}${tipAmount.toFixed(2)}<br>`;
+}
+
+function getCurrencySymbol(currency) {
+  switch(currency) {
+    case "USD":
+      return "$";
+    case "EUR":
+      return "€";
+    case "GBP":
+      return "£";
+    case "CHF":
+      return "Fr";
+    default:
+      return "$";
+  }
 }
