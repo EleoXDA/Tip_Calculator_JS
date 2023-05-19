@@ -27,6 +27,7 @@ form input, .select-currency {
   border-radius: 4px;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  font-size: 1em;
 }
 
 .label-text {
@@ -48,6 +49,20 @@ form button:hover {
 }
 
 h3 {
-  margin-top: 20px;
+  margin: 0px;
+  padding: 10px 20px;
+  font-size: 1em;
   color: #008CBA;
+  min-height: 1em;
+}
+
+#button-and-result {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#result {
+  min-height: 20px;
 }
