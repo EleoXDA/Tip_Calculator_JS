@@ -1,3 +1,27 @@
+window.onload = function() {
+  let billAmountInput = document.getElementById('bill');
+  let tipPercentInput = document.getElementById('tip');
+  let currencySelector = document.getElementById('currency');
+
+  // Set initial input values
+  billAmountInput.value = localStorage.getItem('billAmount') || '';
+  tipPercentInput.value = localStorage.getItem('tipPercent') || '';
+  currencySelector.value = localStorage.getItem('currency') || 'USD';
+
+  // Add event listeners to save input values
+  billAmountInput.addEventListener('input', function() {
+    localStorage.setItem('billAmount', this.value);
+  });
+
+  tipPercentInput.addEventListener('input', function() {
+    localStorage.setItem('tipPercent', this.value);
+  });
+
+  currencySelector.addEventListener('change', function() {
+    localStorage.setItem('currency', this.value);
+  });
+}
+
 function calculateTip() {
   let billAmount = Number(document.getElementById('bill').value);
   let tipPercent = Number(document.getElementById('tip').value);
@@ -13,7 +37,7 @@ function calculateTip() {
 
   let currencySymbol = getCurrencySymbol(currencySelector.value);
   
-  document.getElementById('result').innerHTML = `Tip Amount (${currencySelector.options[currencySelector.selectedIndex].text}): ${currencySymbol}${tipAmount.toFixed(2)}<br>`;
+  document.getElementById('result').innerHTML = `Tip Amount: ${currencySymbol}${tipAmount.toFixed(2)}`;
 }
 
 function getCurrencySymbol(currency) {
@@ -25,7 +49,7 @@ function getCurrencySymbol(currency) {
     case "GBP":
       return "£";
     case "CHF":
-      return "Fr";
+      return "₣";
     default:
       return "$";
   }
