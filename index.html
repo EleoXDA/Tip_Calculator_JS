@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Tip Calculator</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 <body>
 <h2>Tip Calculator</h2>
     <form>
       Bill Amount: <input id="bill" type="number" placeholder="Enter bill amount"><br>
       Tip Percentage: <input id="tip" type="number" placeholder="Enter tip percentage"><br>
+      Currency: 
+      <select id="currency">
+        <option value="USD">US Dollar ($)</option>
+        <option value="EUR">Euro (€)</option>
+        <option value="GBP">English Pound (£)</option>
+        <option value="CHF">Swiss Franc (CHF)</option>
+      </select><br>
       <button type="button" onclick="calculateTip()">Calculate</button>
     </form>
     <h3 id="result"></h3>
+    <script src="script.js"></script>
 </body>
 </html>
