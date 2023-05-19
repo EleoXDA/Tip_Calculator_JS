@@ -11,13 +11,14 @@
     <form>
       Bill Amount: <input id="bill" type="number" placeholder="Enter bill amount"><br>
       Tip Percentage: <input id="tip" type="number" placeholder="Enter tip percentage"><br>
-      Currency: 
-      <select id="currency">
-        <option value="USD">US Dollar ($)</option>
-        <option value="EUR">Euro (€)</option>
-        <option value="GBP">English Pound (£)</option>
-        <option value="CHF">Swiss Franc (CHF)</option>
-      </select><br>
+      <label class="label-text" for="currency">Currency:</label>
+        <select class="select-currency" id="currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="CHF">CHF</option>
+        </select>
+        <br>
       <button type="button" onclick="calculateTip()">Calculate</button>
     </form>
     <h3 id="result"></h3>
