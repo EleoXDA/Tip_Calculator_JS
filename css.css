@@ -5,7 +5,6 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
-  background-color: #f7f7f7;
   font-family: Arial, sans-serif;
 }
 
@@ -38,7 +37,7 @@ body {
 }
 
 h2 {
-  color: #333;
+  color: #000;
 }
 
 form {
@@ -61,6 +60,7 @@ form input, .select-currency {
 .label-text {
   display: inline-block;
   margin-bottom: 5px;
+  color: #000;
 }
 
 form button {
@@ -80,7 +80,7 @@ h3 {
   margin: 0px;
   padding: 10px 20px;
   font-size: 1em;
-  color: #008CBA;
+  color: #000;
   min-height: 1em;
 }
 
@@ -93,4 +93,69 @@ h3 {
 
 #result {
   min-height: 20px;
+  color: #000;
+}
+
+.theme-selector-container {
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 5px;
+  z-index: 10;
+  background-color: #fff;
+  color: #000;
+}
+
+.theme-selector-container select {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: #000;
+}
+
+.theme-default {
+  background-color: #fff;
+  color: #000;
+}
+
+.theme-default button {
+  background-color: #008CBA; /* Blue */
+  color: white;
+}
+
+.theme-default button:hover {
+  background-color: #007B9A; /* Darker blue */
+}
+
+.theme-dark, .theme-dark h2 {
+  background-color: #000;
+  color: #fff;
+}
+
+.theme-dark .label-text {
+  color: #fff;
+}
+
+.theme-dark form {
+  box-shadow: 0px 0px 15px 2px #555;
+  background-color: #000;
+}
+
+.theme-dark button {
+  background-color: #005a7c; /* Darker blue */
+  color: white;
+}
+
+.theme-dark button:hover {
+  background-color: #004461; /* Even darker blue */
+}
+
+.theme-dark .theme-selector-container {
+  background-color: #000;
+  color: #fff;
+}
+
+.theme-dark .theme-selector-container select {
+  background-color: #000;
+  color: #fff;
 }
