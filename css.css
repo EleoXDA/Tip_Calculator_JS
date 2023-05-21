@@ -150,12 +150,9 @@ h3 {
   background-color: #004461; /* Even darker blue */
 }
 
-.theme-dark .theme-selector-container {
+
+.theme-dark .theme-selector-container, .theme-dark .theme-selector-container select, .theme-dark .theme-selector-container option, .theme-dark #bill, .theme-dark #tip, .theme-dark #result, .theme-dark .label-text, .theme-dark .select-currency {
   background-color: #000;
   color: #fff;
 }
 
-.theme-dark .theme-selector-container select {
-  background-color: #000;
-  color: #fff;
-}
