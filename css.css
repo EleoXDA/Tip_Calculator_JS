@@ -9,6 +9,34 @@ body {
   font-family: Arial, sans-serif;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  form {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  form input, .select-currency {
+    font-size: 1em;
+  }
+
+  .label-text {
+    font-size: 1em;
+  }
+
+  form button {
+    padding: 8px 16px;
+    font-size: 1em;
+  }
+
+  h2, h3 {
+    font-size: 1.5em;
+  }
+}
+
 h2 {
   color: #333;
 }
