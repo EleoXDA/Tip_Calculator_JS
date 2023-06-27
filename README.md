@@ -28,3 +28,6 @@ This repository contains the source code for a simple and interactive tip calcul
 4. Click "Calculate" to calculate the tip amount.
 
 Your calculated tip amount will be displayed next to the "Calculate" button.
+
+## License
+This project is licensed under the MIT License. You can find the full text of the license in the [LICENSE.md](LICENSE.md) file.
